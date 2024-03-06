@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  qp-assessment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/home/amit/Documents/GitHub/qp-assessment
+    container_name: qp-assessment
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    command: npm run start

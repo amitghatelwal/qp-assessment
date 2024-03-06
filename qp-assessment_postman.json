@@ -1,0 +1,281 @@
+{
+    "info": {
+        "_postman_id": "776c4e0c-9eba-400b-a8fb-8eb9b5e27d35",
+        "name": "qp-assessment",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Order Items",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/grocery/bookItems",
+                    "path": [
+                        "groceryservice",
+                        "grocery",
+                        "bookItems"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyIiwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcwOTQwOTAyMjAwMCwiZXhwIjoxNzEyNDA5MDIyMDAwfQ.pQvpHLsT8u6E87Np5DPtN1dVXZL2GsEF_RmW9gWZHZk"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"userId\": \"user1\",\n  \"items\": [\n    {\n      \"itemId\": \"3\",\n      \"itemCount\": 1\n    }\n  ]\n}"
+                }
+            }
+        },
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/healthcheck",
+                    "path": [
+                        "groceryservice",
+                        "healthcheck"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyIiwidXNlclJvbGUiOiJhZG1pbiIsImlhdCI6MTcwOTQwOTAyMiwiZXhwIjoxNzA5MTA5MDIyfQ.kpu2Pg4-VUlb30c5vfwZ4NlDMaGbnx2EQ5z_w_QAi44"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Delete Item",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/grocery/removeItem/5",
+                    "path": [
+                        "groceryservice",
+                        "grocery",
+                        "removeItem",
+                        "5"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "GetItems",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/grocery/getItems?limit=4&skip=0&search=s",
+                    "query": [
+                        {
+                            "key": "limit",
+                            "value": "4"
+                        },
+                        {
+                            "key": "skip",
+                            "value": "0"
+                        },
+                        {
+                            "key": "search",
+                            "value": "s"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "groceryservice",
+                        "grocery",
+                        "getItems"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyIiwidXNlclJvbGUiOiJhZG1pbiIsImlhdCI6MTcwOTQwOTAyMiwiZXhwIjoxNzExNDA5MDIyfQ.31NPVzNT0nhkdLv6HH3Uh-THrHkwx9Qt0vyNudTZsAY"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Add Item",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/grocery/addItem",
+                    "path": [
+                        "groceryservice",
+                        "grocery",
+                        "addItem"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyIiwidXNlclJvbGUiOiJhZG1pbiIsImlhdCI6MTcwOTQwOTAyMjAwMCwiZXhwIjoxNzExNDA5MDIyMDAwfQ.dGRz5jhB7SHqJmIukpgZjGa-AX7jP4Rtdi7TPKMVXfQ"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"itemId\": \"5\",\n  \"itemName\": \"sugar\",\n  \"price\": 60,\n  \"availableInventory\": 10,\n  \"discount\": 0,\n  \"unit\": \"kg\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Create Order Table",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/grocery/createOrderTable",
+                    "path": [
+                        "groceryservice",
+                        "grocery",
+                        "createOrderTable"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyIiwidXNlclJvbGUiOiJhZG1pbiIsImlhdCI6MTcwOTQwOTAyMjAwMCwiZXhwIjoxNzExNDA5MDIyMDAwfQ.dGRz5jhB7SHqJmIukpgZjGa-AX7jP4Rtdi7TPKMVXfQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Create Grocery Table",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/grocery/createGroceryTable",
+                    "path": [
+                        "groceryservice",
+                        "grocery",
+                        "createGroceryTable"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyIiwidXNlclJvbGUiOiJhZG1pbiIsImlhdCI6MTcwOTQwOTAyMjAwMCwiZXhwIjoxNzExNDA5MDIyMDAwfQ.dGRz5jhB7SHqJmIukpgZjGa-AX7jP4Rtdi7TPKMVXfQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Update Item",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/grocery/groceryservice/updateItem/1",
+                    "path": [
+                        "grocery",
+                        "groceryservice",
+                        "updateItem",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"itemName\": \"SoyaChunkNews\",\n  \"availableInventory\": 0\n}"
+                }
+            }
+        },
+        {
+            "name": "GetItems For User",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/groceryservice/grocery/getAvailableItems?limit=4&skip=0&search=s",
+                    "query": [
+                        {
+                            "key": "limit",
+                            "value": "4"
+                        },
+                        {
+                            "key": "skip",
+                            "value": "0"
+                        },
+                        {
+                            "key": "search",
+                            "value": "s"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "groceryservice",
+                        "grocery",
+                        "getAvailableItems"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyIiwidXNlclJvbGUiOiJhZG1pbiIsImlhdCI6MTcwOTQwOTAyMiwiZXhwIjoxNzA5MTA5MDIyfQ.kpu2Pg4-VUlb30c5vfwZ4NlDMaGbnx2EQ5z_w_QAi44"
+                    }
+                ]
+            }
+        }
+    ]
+}
